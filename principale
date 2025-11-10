@@ -46,19 +46,19 @@
 
 <body>
   <div id="menu">
-    <button onclick="showMap('v1')">Version 1</button>
-    <button onclick="showMap('v2')">Version 2</button>
+    <button onclick="showMap('v1')">Carte actuelle</button>
+    <button onclick="showMap('v2')">Carte historique</button>
   </div>
 
   <!-- Affiche la première carte au démarrage -->
-  <iframe id="mapFrame" src="carte1.html"></iframe>
+  <iframe id="mapFrame" src="UMT_2025.html"></iframe>
 
   <script>
     function showMap(version) {
       const frame = document.getElementById('mapFrame');
       frame.style.opacity = 0; // effet fondu
       setTimeout(() => {
-        frame.src = version === 'v1' ? 'carte1.html' : 'carte2.html';
+        frame.src = version === 'v1' ? 'UMT_2025.html' : 'UMT_historique.html';
         frame.onload = () => { frame.style.opacity = 1; };
       }, 300);
     }
